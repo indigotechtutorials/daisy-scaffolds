@@ -25,8 +25,10 @@
     <%%= form.label :<%= attribute.column_name %>, style: "display: block" %>
     <%%= form.<%= attribute.field_type %> :<%= attribute.column_name %>, multiple: true %>
 <% else -%>
-    <%%= form.label :<%= attribute.column_name %>, style: "display: block" %>
-    <%%= form.<%= attribute.field_type %> :<%= attribute.column_name %> %>
+    <%% form.label :<%= attribute.column_name %> do %>
+      <span> <%= attribute.column_name %> </span>
+      <%%= form.<%= attribute.field_type %> :<%= attribute.column_name, class: "input input-md" %> %>
+    <% end %>
 <% end -%>
   </div>
 
